@@ -11,7 +11,7 @@ Pod::Spec.new do |s|
   s.license      = package['license']
   s.platform     = :ios, "8.0"
 
-  s.source       = { :git => package['repository']['url'], :tag => "v"+package['version'] }
+  s.source       = { :git => package['repository']['url'], :tag => "v{s.version}" }
   s.source_files = 'lib/ios/**/*.{h,m}'
   s.resource = ['lib/ios/Resources/Assets.xcassets']
 
