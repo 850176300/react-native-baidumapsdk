@@ -1,0 +1,11 @@
+.idea/
+.gradle/
+node_modules/
+build/
+xcuserdata/
+*.xcworkspace/
+Pods/
+
+*.iml
+local.properties
+Podfile.lock

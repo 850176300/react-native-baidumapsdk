@@ -1,0 +1,63 @@
+{
+  "name": "react-native-baidumap-sdk",
+  "description": "React Native BaiduMap SDK for Android + iOS",
+  "keywords": [
+    "react-native",
+    "maps",
+    "mapview",
+    "location",
+    "baidumap"
+  ],
+  "version": "0.5.8",
+  "author": "7c00 <i@7c00.cc>",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/850176300/react-native-baidumap-sdk.git",
+    "podspec":"https://github.com/850176300/react-native-baidumap-sdk.git"
+  },
+  "license": "MIT",
+  "files": [
+    "lib/js",
+    "lib/ios",
+    "lib/android/src",
+    "lib/android/build.gradle",
+    "react-native-baidumap-sdk.podspec"
+  ],
+  "main": "lib/js",
+  "scripts": {
+    "test": "eslint . && flow",
+    "start": "node node_modules/react-native/local-cli/cli.js start",
+    "reload": "adb reverse tcp:8081 tcp:8081 && adb shell input text rr",
+    "run-android": "node node_modules/react-native/local-cli/cli.js run-android",
+    "log-android": "node node_modules/react-native/local-cli/cli.js log-android",
+    "release-android": "node node_modules/react-native/local-cli/cli.js run-android --variant=release",
+    "run-ios": "node node_modules/react-native/local-cli/cli.js run-ios"
+  },
+  "dependencies": {
+    "supercluster": "^3.0.2"
+  },
+  "peerDependencies": {
+    "react-native": ">=0.47"
+  },
+  "devDependencies": {
+    "babel-eslint": "^8.2.2",
+    "babel-preset-react-native": "^4.0.0",
+    "eslint": "^4.19.1",
+    "eslint-config-airbnb": "^16.1.0",
+    "eslint-plugin-import": "^2.10.0",
+    "eslint-plugin-jsx-a11y": "^6.0.3",
+    "eslint-plugin-react": "^7.7.0",
+    "flow-bin": "^0.69.0",
+    "react": "^16.2.0",
+    "react-native": "^0.52.3",
+    "react-navigation": "1.5.11"
+  },
+  "presets": [
+    "react-native"
+  ],
+  "rnpm": {
+    "android": {
+      "sourceDir": "lib/android"
+    }
+  }
+}
