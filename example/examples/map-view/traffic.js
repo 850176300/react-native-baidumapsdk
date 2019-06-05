@@ -1,6 +1,6 @@
 import React from 'react'
 import { StyleSheet } from 'react-native'
-import { MapView } from '@jellyuncle/react-native-baidumapsdk'
+import { MapView } from 'react-native-bmpsdk'
 import { SwitchScreen } from '../common'
 
 export default class Traffic extends SwitchScreen {

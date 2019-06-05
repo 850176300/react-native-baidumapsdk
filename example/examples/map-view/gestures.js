@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { StyleSheet, Text, View } from 'react-native'
-import { MapView } from '@jellyuncle/react-native-baidumapsdk'
+import { MapView } from 'react-native-bmpsdk'
 import { Switch } from '../common'
 
 const style = StyleSheet.create({

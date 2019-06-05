@@ -11,7 +11,7 @@ module.exports = {
     'import/no-extraneous-dependencies': 'off',
     'import/extensions': 'off',
     'import/no-unresolved': ['error', {
-      ignore: ['@jellyuncle/react-native-baidumapsdk', 'EventEmitter', './text'],
+      ignore: ['react-native-bmpsdk', 'EventEmitter', './text'],
     }],
   },
 }

@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { Dimensions, StyleSheet, Text, TouchableOpacity, View } from 'react-native'
-import { MapView } from '@jellyuncle/react-native-baidumapsdk'
+import { MapView } from 'react-native-bmpsdk'
 
 const styles = StyleSheet.create({
   full: {

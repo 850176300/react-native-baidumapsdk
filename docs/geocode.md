@@ -1,7 +1,7 @@
 # Geocode 地理编码/逆编码模块
 
 ```javascript
-import { Geocode } from '@jellyuncle/react-native-baidumapsdk'
+import { Geocode } from 'react-native-bmpsdk'
 
 // 地理编码，也就是地址 -> 坐标
 const searchResult = await Geocode.search('海龙大厦', '北京市')

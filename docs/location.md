@@ -4,7 +4,7 @@
 
 用法：
 ```javascript
-import { Location } from '@jellyuncle/react-native-baidumapsdk'
+import { Location } from 'react-native-bmpsdk'
 
 await Location.init()
 Location.addLocationListener(location => console.log(location))

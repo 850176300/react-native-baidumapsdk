@@ -21,7 +21,7 @@ target 'RNBaiduMap' do
   pod 'GLog', :podspec => '../node_modules/react-native/third-party-podspecs/GLog.podspec'
   pod 'Folly', :podspec => '../node_modules/react-native/third-party-podspecs/Folly.podspec'
 
-  pod 'react-native-baidumapsdk', path: '.'
+  pod 'react-native-bmpsdk', path: '.'
 end
 
 post_install do |installer|

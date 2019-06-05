@@ -1,6 +1,6 @@
 import { StatusBar } from 'react-native'
 import { StackNavigator } from 'react-navigation'
-import { Initializer } from '@jellyuncle/react-native-baidumapsdk'
+import { Initializer } from 'react-native-bmpsdk'
 import examples from './examples'
 
 StatusBar.setBarStyle('light-content')

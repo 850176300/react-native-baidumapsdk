@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { StyleSheet, Text, View } from 'react-native'
-import { Location } from '@jellyuncle/react-native-baidumapsdk'
+import { Location } from 'react-native-bmpsdk'
 
 const style = StyleSheet.create({
   body: {

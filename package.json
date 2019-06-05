@@ -1,5 +1,5 @@
 {
-  "name": "@jellyuncle/react-native-baidumapsdk",
+  "name": "react-native-bmpsdk",
   "description": "React Native BaiduMap SDK for Android + iOS",
   "keywords": [
     "react-native",
@@ -12,7 +12,7 @@
   "author": "850176300 <deardarli.com>",
   "repository": {
     "type": "git",
-    "url": "https://github.com/850176300/react-native-baidumapsdk.git"
+    "url": "https://github.com/850176300/react-native-bmpsdk.git"
   },
   "license": "MIT",
   "files": [
@@ -20,7 +20,7 @@
     "lib/ios",
     "lib/android/src",
     "lib/android/build.gradle",
-    "react-native-baidumapsdk.podspec"
+    "react-native-bmpsdk.podspec"
   ],
   "main": "lib/js",
   "scripts": {
