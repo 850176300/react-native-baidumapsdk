@@ -1,6 +1,6 @@
 import React from 'react'
 import { StyleSheet } from 'react-native'
-import { MapView } from 'react-native-baidumapsdk'
+import { MapView } from '@jellyuncle/react-native-baidumapsdk'
 import { SwitchScreen } from '../common'
 
 export default class Satellite extends SwitchScreen {

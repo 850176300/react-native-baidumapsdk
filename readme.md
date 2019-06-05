@@ -11,7 +11,7 @@ React Native BaiduMap SDK for Android + iOS.
 
 ### 基本用法
 ```javascript
-import { MapView } from 'react-native-baidumapsdk'
+import { MapView } from '@jellyuncle/react-native-baidumapsdk'
 
 render() {
   return <MapView center={{ latitude: 39.2, longitude: 112.4 }} />
@@ -26,7 +26,7 @@ render() {
 
 ### 监听地图事件
 ```javascript
-import { MapView } from 'react-native-baidumapsdk'
+import { MapView } from '@jellyuncle/react-native-baidumapsdk'
 
 render() {
   return (
@@ -42,7 +42,7 @@ render() {
 
 ### 定位并关联定位图层
 ```javascript
-import { MapView, Location } from 'react-native-baidumapsdk'
+import { MapView, Location } from '@jellyuncle/react-native-baidumapsdk'
 
 await Location.init()
 Location.addLocationListener(location => this.setState({ location }))
@@ -144,7 +144,7 @@ points = [
 
 ### 地理编码/逆地理编码
 ```javascript
-import { Geocode } from 'react-native-baidumapsdk'
+import { Geocode } from '@jellyuncle/react-native-baidumapsdk'
 
 const searchResult = await Geocode.search('海龙大厦')
 const reverseResult = await Geocode.reverse({ latitude: 39, longitude: 113 })

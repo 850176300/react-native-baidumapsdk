@@ -1,5 +1,5 @@
 {
-  "name": "react-native-baidumapsdk",
+  "name": "@jellyuncle/react-native-baidumapsdk",
   "description": "React Native BaiduMap SDK for Android + iOS",
   "keywords": [
     "react-native",

@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { Alert, StyleSheet } from 'react-native'
-import { MapView } from 'react-native-baidumapsdk'
+import { MapView } from '@jellyuncle/react-native-baidumapsdk'
 
 export default class ImageMarker extends Component {
   static navigationOptions = { title: 'Custom Image' }

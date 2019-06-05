@@ -16,6 +16,26 @@ yarn add react-native-baidumapsdk
 ```bash
 react-native link react-native-baidumapsdk
 ```
+### 手动配置
+1、修改setting.gradle
+```xml
+include ':react-native-baidumapsdk'
+project(':react-native-baidumapsdk').projectDir = new File(rootProject.projectDir, '../node_modules/@jellyuncle/react-native-baidumapsdk/lib/android')
+```
+2、修改MainApplication
+```java
+    @Override
+    protected List<ReactPackage> getPackages() {
+      return Arrays.<ReactPackage>asList(
+            new BaiduMapPackage(), // Add this line
+      );
+    }
+```
+3、修改build.gradle
+```gradle
+implementation project(':react-native-baidumapsdk')
+```
+
 [获取 Android 开发密钥](http://lbsyun.baidu.com/index.php?title=iossdk/guide/create-project/ak)，
 在 AndroidManifest 中添加：
 ```xml
@@ -55,7 +75,7 @@ target 'RNBaiduMap' do
   pod 'GLog', :podspec => '../node_modules/react-native/third-party-podspecs/GLog.podspec'
   pod 'Folly', :podspec => '../node_modules/react-native/third-party-podspecs/Folly.podspec'
 
-  pod 'react-native-baidumapsdk', path: '../node_modules/react-native-baidumapsdk'
+  pod 'react-native-baidumapsdk', path: '../node_modules/@jellyuncle/react-native-baidumapsdk'
 end
 
 post_install do |installer|
@@ -82,7 +102,7 @@ pod install
 [获取 iOS 开发密钥](http://lbsyun.baidu.com/index.php?title=iossdk/guide/create-project/ak)。
 
 ```javascript
-import { Initializer } from 'react-native-baidumapsdk'
+import { Initializer } from '@jellyuncle/react-native-baidumapsdk'
 
 Initializer.init('iOS 开发密钥').catch(e => console.error(e))
 ```

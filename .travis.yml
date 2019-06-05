@@ -26,7 +26,7 @@ aliases:
       yarn global add react-native-cli
       react-native init App --version="0.52.3"
       cd App
-      yarn add react-native-baidumapsdk
+      yarn add @jellyuncle/react-native-baidumapsdk
 
 jobs:
   include:
@@ -100,7 +100,7 @@ jobs:
               pod 'DoubleConversion', :podspec => '../node_modules/react-native/third-party-podspecs/DoubleConversion.podspec'
               pod 'GLog', :podspec => '../node_modules/react-native/third-party-podspecs/GLog.podspec'
               pod 'Folly', :podspec => '../node_modules/react-native/third-party-podspecs/Folly.podspec'
-              pod 'react-native-baidumapsdk', path: '../node_modules/react-native-baidumapsdk'
+              pod 'react-native-baidumapsdk', path: '../node_modules/@jellyuncle/react-native-baidumapsdk'
             end
             post_install do |installer|
               installer.pods_project.targets.each do |target|
