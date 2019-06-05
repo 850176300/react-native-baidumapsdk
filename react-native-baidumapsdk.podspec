@@ -6,12 +6,12 @@ Pod::Spec.new do |s|
   s.name         = package['name']
   s.version      = package['version']
   s.summary      = package['description']
-  s.authors      = { "7c00" => "i@7c00.cc" }
+  s.authors      = { "850176300" => "deardarli.com" }
   s.homepage     = package['repository']['url']
   s.license      = package['license']
   s.platform     = :ios, "8.0"
 
-  s.source       = { :git => package['repository']['podspec'] }
+  s.source       = { :git => package['repository']['url'], :tag => "v"+s.version }
   s.source_files = 'lib/ios/**/*.{h,m}'
   s.resource = ['lib/ios/Resources/Assets.xcassets']
 

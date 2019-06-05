@@ -61,7 +61,7 @@ class BaiduMapViewManager : ViewGroupManager<BaiduMapView>() {
     override fun getCommandsMap(): Map<String, Int> {
         return mapOf(
                 "setStatus" to SET_STATUS,
-                    "clearMarkers" to CLEAR_MARKERS
+                "clearMarkers" to CLEAR_MARKERS
         )
     }
 
