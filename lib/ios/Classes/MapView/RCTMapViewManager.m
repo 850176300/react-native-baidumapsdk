@@ -75,4 +75,11 @@ RCT_EXPORT_METHOD(setStatus:(nonnull NSNumber *)reactTag params:(NSDictionary *)
     }];
 }
 
+RCT_EXPORT_METHOD(clearMarkers:(nonnull NSNumber *)reactTag) {
+    [self.bridge.uiManager addUIBlock:^(__unused RCTUIManager *uiManager, NSDictionary<NSNumber *, UIView *> *viewRegistry) {
+        RCTMapView *mapView = (RCTMapView *) viewRegistry[reactTag];
+        [mapView removeAnnotations:mapView.annotations];
+    }];
+}
+
 @end

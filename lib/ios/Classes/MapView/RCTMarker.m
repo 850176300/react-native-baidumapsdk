@@ -72,6 +72,14 @@
     });
 }
 
+-(void)setScale:(CGPoint)scale{
+    [UIView beginAnimations:@"scale" context:nil];
+    [UIView setAnimationDuration:0.2f];
+    CGAffineTransform scaleTransform = CGAffineTransformScale(_annotationView.transform, scale.x, scale.y);
+    [_annotationView setTransform:scaleTransform];
+    [UIView commitAnimations];
+}
+
 - (void)setDraggable:(BOOL)draggable {
     _annotationView.draggable = draggable;
 }
