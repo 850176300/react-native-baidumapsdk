@@ -11,7 +11,7 @@ module.exports = {
     'import/no-extraneous-dependencies': 'off',
     'import/extensions': 'off',
     'import/no-unresolved': ['error', {
-      ignore: ['react-native-baidumap-sdk', 'EventEmitter', './text'],
+      ignore: ['react-native-baidumapsdk', 'EventEmitter', './text'],
     }],
   },
 }

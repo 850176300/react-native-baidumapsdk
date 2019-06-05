@@ -1,7 +1,7 @@
 # MapView 地图组件
 
 ```javascript
-import { MapView } from 'react-native-baidumap-sdk'
+import { MapView } from 'react-native-baidumapsdk'
 
 render() {
   return (

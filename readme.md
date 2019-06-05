@@ -1,10 +1,6 @@
-# react-native-baidumap-sdk [![npm version][version-badge]][npm] [![build status][build-badge]][build]
+# react-native-baidumapsdk 
 
 React Native BaiduMap SDK for Android + iOS.
-
-你可以下载安装 [example.apk](https://github.com/qiuxiang/react-native-baidumap-sdk/releases/download/v0.5.0/example.apk) 看看实际中的效果。
-
-*注意：RN v0.53+ 存在一些 bug（主要影响 iOS 自定义 View），建议使用 RN v0.52。*
 
 ## 安装
 
@@ -15,7 +11,7 @@ React Native BaiduMap SDK for Android + iOS.
 
 ### 基本用法
 ```javascript
-import { MapView } from 'react-native-baidumap-sdk'
+import { MapView } from 'react-native-baidumapsdk'
 
 render() {
   return <MapView center={{ latitude: 39.2, longitude: 112.4 }} />
@@ -30,7 +26,7 @@ render() {
 
 ### 监听地图事件
 ```javascript
-import { MapView } from 'react-native-baidumap-sdk'
+import { MapView } from 'react-native-baidumapsdk'
 
 render() {
   return (
@@ -46,7 +42,7 @@ render() {
 
 ### 定位并关联定位图层
 ```javascript
-import { MapView, Location } from 'react-native-baidumap-sdk'
+import { MapView, Location } from 'react-native-baidumapsdk'
 
 await Location.init()
 Location.addLocationListener(location => this.setState({ location }))
@@ -148,14 +144,14 @@ points = [
 
 ### 地理编码/逆地理编码
 ```javascript
-import { Geocode } from 'react-native-baidumap-sdk'
+import { Geocode } from 'react-native-baidumapsdk'
 
 const searchResult = await Geocode.search('海龙大厦')
 const reverseResult = await Geocode.reverse({ latitude: 39, longitude: 113 })
 ```
 <img src="https://user-images.githubusercontent.com/1709072/36655485-ed756bfc-1afd-11e8-8f4b-c6ec50ebc8dd.png" width=300>
 
-需要注意，以上例子简写了一些属性，并不能直接使用，更多实际的例子请参考：[example](https://github.com/qiuxiang/react-native-baidumap-sdk/tree/master/example)。
+需要注意，以上例子简写了一些属性，并不能直接使用，更多实际的例子请参考：[example](https://github.com/qiuxiang/react-native-baidumapsdk/tree/master/example)。
 
 ## 接口文档
 [JS 代码](lib/js)有完善的类型标注，建议结合源代码一起阅读，特别是需要知道具体参数、返回值类型的时候。
@@ -170,7 +166,7 @@ const reverseResult = await Geocode.reverse({ latitude: 39, longitude: 113 })
 - [Location](docs/location.md)
 - [Geocode](docs/geocode.md)
 
-[npm]: https://www.npmjs.com/package/react-native-baidumap-sdk
-[version-badge]: https://badge.fury.io/js/react-native-baidumap-sdk.svg
-[build-badge]: https://travis-ci.org/qiuxiang/react-native-baidumap-sdk.svg?branch=master
-[build]: https://travis-ci.org/qiuxiang/react-native-baidumap-sdk
+[npm]: https://www.npmjs.com/package/react-native-baidumapsdk
+[version-badge]: https://badge.fury.io/js/react-native-baidumapsdk.svg
+[build-badge]: https://travis-ci.org/qiuxiang/react-native-baidumapsdk.svg?branch=master
+[build]: https://travis-ci.org/qiuxiang/react-native-baidumapsdk
