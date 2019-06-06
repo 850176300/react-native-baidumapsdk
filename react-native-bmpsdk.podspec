@@ -16,7 +16,7 @@ Pod::Spec.new do |s|
   s.resource = ['lib/ios/Resources/Assets.xcassets']
 
   s.dependency 'React'
-  s.dependency 'BaiduMapKit', "~> 3.4.0"
+  s.dependency 'BaiduMapKit', "~> 4.3.2"
   s.dependency 'BMKLocationKit'
   s.static_framework = true
 end
