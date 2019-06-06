@@ -22,13 +22,13 @@ RCT_EXPORT_METHOD(search:(NSString *)address
                     city:(NSString *)city
       searchWithResolver:(RCTPromiseResolveBlock)resolve
                 rejecter:(RCTPromiseRejectBlock)reject) {
-    BMKGeoCodeSearchOption *option = [BMKGeoCodeSearchOption new];
+    BMKGeoCodeSearchOption *option = [[BMKGeoCodeSearchOption alloc] init];
     option.city = city;
     option.address = address;
     _resolve = resolve;
     _reject = reject;
     if (!_search) {
-        _search = [BMKGeoCodeSearch new];
+        _search = [[BMKGeoCodeSearch alloc] init];
         _search.delegate = self;
     }
     [_search geoCode:option];
@@ -37,8 +37,8 @@ RCT_EXPORT_METHOD(search:(NSString *)address
 RCT_EXPORT_METHOD(reverse:(CLLocationCoordinate2D)coordinate
                  resolver:(RCTPromiseResolveBlock)resolve
                  rejecter:(RCTPromiseRejectBlock)reject) {
-    BMKReverseGeoCodeOption *option = [BMKReverseGeoCodeOption new];
-    option.reverseGeoPoint = coordinate;
+    BMKReverseGeoCodeSearchOption *option = [[BMKReverseGeoCodeSearchOption alloc] init];
+    option.location = coordinate;
     _resolve = resolve;
     _reject = reject;
     if (!_search) {
@@ -59,13 +59,12 @@ RCT_EXPORT_METHOD(suggestPois:(CLLocationCoordinate2D)coordinate mycoord:(CLLoca
         _poiSearch.delegate = self;
     }
     selfLocation = mycoord;
-    BMKNearbySearchOption* option = [[BMKNearbySearchOption alloc] init];
+    BMKPOINearbySearchOption* option = [[BMKPOINearbySearchOption alloc] init];
     option.location = coordinate;
-    option.keyword = keyword;
+    option.keywords = [keyword componentsSeparatedByString:@"$"];
     option.radius = bounds;
     option.pageIndex = page;
-    option.pageCapacity = pageSize;
-    option.sortType = sortType == 1 ? BMK_POI_SORT_BY_DISTANCE : BMK_POI_SORT_BY_COMPOSITE;
+    option.pageSize = pageSize;
     [_poiSearch poiSearchNearBy:option];
 }
 
@@ -79,11 +78,11 @@ RCT_EXPORT_METHOD(searchByKeyWord:(CLLocationCoordinate2D)mycoord city:(NSString
         _poiSearch.delegate = self;
     }
     selfLocation = mycoord;
-    BMKCitySearchOption* option = [[BMKCitySearchOption alloc] init];
+    BMKPOICitySearchOption* option = [[BMKPOICitySearchOption alloc] init];
     option.city = city;
     option.keyword = keyword;
     option.pageIndex = page;
-    option.pageCapacity = pageSize;
+    option.pageSize = pageSize;
     [_poiSearch poiSearchInCity:option];
 }
 
@@ -94,13 +93,13 @@ RCT_EXPORT_METHOD(cancelSearch){
         _poireject = nil;
 }
 
-- (void)onGetGeoCodeResult:(BMKGeoCodeSearch *)searcher result:(BMKGeoCodeResult *)result errorCode:(BMKSearchErrorCode)error {
+- (void)onGetGeoCodeResult:(BMKGeoCodeSearch *)searcher result:(BMKGeoCodeSearchResult *)result errorCode:(BMKSearchErrorCode)error {
     if (error == BMK_SEARCH_NO_ERROR) {
         if (_resolve){
             _resolve(@{
                 @"latitude": @(result.location.latitude),
                 @"longitude": @(result.location.longitude),
-                @"address": result.address,
+                @"address": @"",
             });
         }
         _resolve = nil;
@@ -116,7 +115,7 @@ RCT_EXPORT_METHOD(cancelSearch){
 }
 
 - (void)onGetReverseGeoCodeResult:(BMKGeoCodeSearch *)searcher
-                           result:(BMKReverseGeoCodeResult *)result
+                           result:(BMKReverseGeoCodeSearchResult *)result
                         errorCode:(BMKSearchErrorCode)error {
     if (error == BMK_SEARCH_NO_ERROR) {
         if (_resolve){
@@ -148,7 +147,7 @@ RCT_EXPORT_METHOD(cancelSearch){
     }
 }
 
-- (void)onGetPoiResult:(BMKPoiSearch*)searcher result:(BMKPoiResult*)poiResult errorCode:(BMKSearchErrorCode)errorCode{
+- (void)onGetPoiResult:(BMKPoiSearch*)searcher result:(BMKPOISearchResult*)poiResult errorCode:(BMKSearchErrorCode)errorCode{
     if (errorCode == BMK_SEARCH_NO_ERROR){
         NSMutableArray* arr = [NSMutableArray arrayWithCapacity:10];
         for (int i = 0; i < poiResult.poiInfoList.count;++i){

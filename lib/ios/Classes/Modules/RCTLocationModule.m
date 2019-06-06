@@ -87,10 +87,6 @@ RCT_EXPORT_METHOD(stop) {
     [self sendEventWithName:@"baiduMapLocation" body: _location.json];
 }
 
-- (void)didUpdateBMKUserLocation:(BMKUserLocation *)userLocation {
-    [_location updateWithCLLocation:userLocation.location];
-    [self sendEventWithName:@"baiduMapLocation" body: _location.json];
-}
 
 - (NSArray<NSString *> *)supportedEvents {
     return @[@"baiduMapLocation"];
