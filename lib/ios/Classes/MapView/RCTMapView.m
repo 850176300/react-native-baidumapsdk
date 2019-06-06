@@ -8,9 +8,11 @@
 @implementation RCTMapView {
     NSMutableDictionary *_markers;
     NSMutableDictionary *_overlays;
+    BOOL _firstTimeIn;
 }
 
 - (instancetype)init {
+    _firstTimeIn = YES;
     _markers = [NSMutableDictionary new];
     _overlays = [NSMutableDictionary new];
     self = [super init];
@@ -119,22 +121,29 @@
 }
 
 - (void)mapView:(RCTMapView *)mapView regionDidChangeAnimated:(BOOL)animated {
-    if (self.onBaiduMapStatusChange) {
-        self.onBaiduMapStatusChange(@{
-            @"center": @{
-                @"latitude": @(self.centerCoordinate.latitude),
-                @"longitude": @(self.centerCoordinate.longitude),
-            },
-            @"region": @{
-                @"latitude": @(self.region.center.latitude),
-                @"longitude": @(self.region.center.longitude),
-                @"latitudeDelta": @(self.region.span.latitudeDelta),
-                @"longitudeDelta": @(self.region.span.longitudeDelta),
-            },
-            @"zoomLevel": @(self.zoomLevel),
-            @"rotation": @(self.rotation),
-            @"overlook": @(self.overlooking),
-        });
+    
+}
+
+-(void)mapView:(BMKMapView *)mapView regionDidChangeAnimated:(BOOL)animated reason:(BMKRegionChangeReason)reason{
+    if (reason != BMKRegionChangeReasonAPIs || _firstTimeIn){
+        _firstTimeIn = NO;
+        if (self.onBaiduMapStatusChange) {
+            self.onBaiduMapStatusChange(@{
+                                          @"center": @{
+                                                  @"latitude": @(self.centerCoordinate.latitude),
+                                                  @"longitude": @(self.centerCoordinate.longitude),
+                                                  },
+                                          @"region": @{
+                                                  @"latitude": @(self.region.center.latitude),
+                                                  @"longitude": @(self.region.center.longitude),
+                                                  @"latitudeDelta": @(self.region.span.latitudeDelta),
+                                                  @"longitudeDelta": @(self.region.span.longitudeDelta),
+                                                  },
+                                          @"zoomLevel": @(self.zoomLevel),
+                                          @"rotation": @(self.rotation),
+                                          @"overlook": @(self.overlooking),
+                                          });
+        }
     }
 }
 

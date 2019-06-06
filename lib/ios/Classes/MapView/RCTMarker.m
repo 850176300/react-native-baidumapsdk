@@ -41,6 +41,7 @@
 
 - (void)setImage:(NSString *)image {
     _annotationView.image = [UIImage imageNamed:image];
+    _annotationSize = _annotationView.bounds.size;
     [self updateCenterOffset];
 }
 
@@ -75,8 +76,7 @@
 -(void)setScale:(CGPoint)scale{
     [UIView beginAnimations:@"scale" context:nil];
     [UIView setAnimationDuration:0.2f];
-    CGAffineTransform scaleTransform = CGAffineTransformScale(_annotationView.transform, scale.x, scale.y);
-    [_annotationView setTransform:scaleTransform];
+    _annotationView.bounds = CGRectMake(0, 0, _annotationSize.width*scale.x, _annotationSize.height*scale.y);
     [UIView commitAnimations];
 }
 

@@ -1,6 +1,6 @@
-#import <BMKLocationkit/BMKLocationComponent.h>
+#import <BaiduMapAPI_Base/BMKUserLocation.h>
 
-@interface RCTUserLocation : BMKLocation
+@interface RCTUserLocation : BMKUserLocation
 
 - (instancetype)initWithCLLocation:(CLLocation *)cllocation;
 - (void)updateWithCLLocation:(CLLocation *)cllocation;
