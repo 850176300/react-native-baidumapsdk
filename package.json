@@ -19,6 +19,7 @@
     "lib/js",
     "lib/ios",
     "lib/android/src",
+    "lib/android/libs",
     "lib/android/build.gradle",
     "react-native-bmpsdk.podspec"
   ],
