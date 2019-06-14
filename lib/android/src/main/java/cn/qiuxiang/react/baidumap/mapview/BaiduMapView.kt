@@ -209,4 +209,15 @@ class BaiduMapView(context: Context) : FrameLayout(context) {
             }
         }
     }
+
+    fun clearAllMarkers(){
+        var iterator = markers.entries.iterator()
+        while (iterator.hasNext()){
+            var entry = iterator.next()
+            if (entry.value is BaiduMapMarker){
+                entry.value.remove()
+            }
+        }
+        markers.clear()
+    }
 }

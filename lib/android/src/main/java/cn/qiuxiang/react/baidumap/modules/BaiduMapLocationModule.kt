@@ -94,4 +94,14 @@ class BaiduMapLocationModule(context: ReactApplicationContext) : ReactContextBas
         client.stop()
     }
 
+    @ReactMethod
+    fun getDistance(coordinate1: ReadableMap, coordinate2: ReadableMap, promise: Promise?){
+        var c1 = coordinate1.toLatLng()
+        var c2 = coordinate2.toLatLng()
+        var distance = DistanceUtil.getDistance(c1, c2)
+        val data = Arguments.createMap()
+        data.putDouble("distance", distance)
+        promise?.resolve(data)
+    }
+
 }

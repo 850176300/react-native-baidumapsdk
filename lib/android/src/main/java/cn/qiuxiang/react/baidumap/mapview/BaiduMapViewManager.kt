@@ -68,7 +68,7 @@ class BaiduMapViewManager : ViewGroupManager<BaiduMapView>() {
     override fun receiveCommand(mapView: BaiduMapView, commandId: Int, args: ReadableArray?) {
         when (commandId) {
             SET_STATUS -> mapView.setStatus(args)
-            CLEAR_MARKERS -> mapView.map.clear()
+            CLEAR_MARKERS -> mapView.clearAllMarkers()
         }
     }
 
