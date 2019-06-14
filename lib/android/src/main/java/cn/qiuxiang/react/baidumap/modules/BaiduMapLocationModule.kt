@@ -9,6 +9,8 @@ import com.facebook.react.bridge.*
 import com.facebook.react.modules.core.DeviceEventManagerModule.RCTDeviceEventEmitter
 import java.text.SimpleDateFormat
 import java.util.*
+import com.baidu.mapapi.utils.DistanceUtil
+import cn.qiuxiang.react.baidumap.toLatLng
 
 @Suppress("unused")
 class BaiduMapLocationModule(context: ReactApplicationContext) : ReactContextBaseJavaModule(context) {
