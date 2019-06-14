@@ -48,8 +48,8 @@ RCT_EXPORT_METHOD(stop) {
 }
 
 RCT_EXPORT_METHOD(getDistance:(CLLocationCoordinate2D)coordinate1 dest:(CLLocationCoordinate2D)coordinate2 resovler:(RCTPromiseResolveBlock)resolve rejecter:(RCTPromiseRejectBlock)reject) {
-    BMKMapPoint point1 = BMKMapPointForCoordinate(selfLocation);
-    BMKMapPoint point2 = BMKMapPointForCoordinate(info.pt);
+    BMKMapPoint point1 = BMKMapPointForCoordinate(coordinate1);
+    BMKMapPoint point2 = BMKMapPointForCoordinate(coordinate2);
     CLLocationDistance distance = BMKMetersBetweenMapPoints(point1, point2);
     resolve(@{@"distance": [NSNumber numberWithDouble:distance]});
 }
