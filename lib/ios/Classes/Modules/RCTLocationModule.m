@@ -1,7 +1,7 @@
 #import <React/RCTEventEmitter.h>
 #import <BMKLocationkit/BMKLocationComponent.h>
 #import "RCTUserLocation.h"
-
+#import <BaiduMapAPI_Utils/BMKUtilsComponent.h>
 @interface RCTLocationModule : RCTEventEmitter <RCTBridgeModule, BMKLocationManagerDelegate>
 @end
 
